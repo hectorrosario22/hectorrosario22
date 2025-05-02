@@ -1,5 +1,6 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted } from "vue";
+import { personalInfo } from "../../lib/consts";
 
 const titles = [
   ".NET Developer",
@@ -61,7 +62,7 @@ onMounted(() => {
         <h1
           class="text-4xl md:text-6xl font-bold text-secondary-900 dark:text-white mb-4 animate-slide-up"
         >
-          Your Name
+          {{ personalInfo.name }}
         </h1>
 
         <div

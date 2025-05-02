@@ -1,24 +1,22 @@
 <script setup>
-import { ref } from "vue";
+import { personalInfo } from "../../lib/consts";
 
 const currentYear = new Date().getFullYear();
-
-// Social links
-const socialLinks = [
-  {
-    name: "Github",
-    icon: ["fab", "github"],
-    url: "https://github.com/hectorrosario22",
-  },
+const socialMediaLinks = [
   {
     name: "LinkedIn",
     icon: ["fab", "linkedin"],
-    url: "https://linkedin.com/in/hector-rosario",
+    url: personalInfo.linkedInUrl,
+  },
+  {
+    name: "GitHub",
+    icon: ["fab", "github"],
+    url: personalInfo.githubUrl,
   },
   {
     name: "Email",
     icon: "envelope",
-    url: "mailto:hectorjuniorrosario22@gmail.com",
+    url: `mailto:${personalInfo.email}`,
   },
 ];
 </script>
@@ -30,15 +28,17 @@ const socialLinks = [
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-6 md:mb-0">
-          <h2 class="text-2xl font-bold text-primary-500">Héctor Rosario</h2>
+          <h2 class="text-2xl font-bold text-primary-500">
+            {{ personalInfo.name }}
+          </h2>
           <p class="mt-2 text-secondary-600 dark:text-secondary-300">
-            .NET Backend Developer
+            {{ personalInfo.title }}
           </p>
         </div>
 
         <div class="flex space-x-4">
           <a
-            v-for="link in socialLinks"
+            v-for="link in socialMediaLinks"
             :key="link.name"
             :href="link.url"
             :aria-label="link.name"
@@ -54,7 +54,9 @@ const socialLinks = [
       <div
         class="mt-8 pt-8 border-t border-secondary-200 dark:border-secondary-700 text-center text-secondary-600 dark:text-secondary-400"
       >
-        <p>&copy; {{ currentYear }} Héctor Rosario. All rights reserved.</p>
+        <p>
+          &copy; {{ currentYear }} {{ personalInfo.name }}. All rights reserved.
+        </p>
       </div>
     </div>
   </footer>

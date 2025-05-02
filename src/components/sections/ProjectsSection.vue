@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
+import { personalInfo } from "../../lib/consts";
 
 // Project categories
 const categories = [
@@ -252,7 +253,7 @@ const setActiveCategory = (categoryId) => {
     <!-- View more link -->
     <div class="text-center mt-12">
       <a
-        href="https://github.com/yourusername"
+        :href="personalInfo.githubUrl"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium"

@@ -1,5 +1,6 @@
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
+import { personalInfo } from "../../lib/consts";
 
 const props = defineProps({
   isDarkMode: Boolean,
@@ -9,7 +10,6 @@ const emit = defineEmits(["toggle-dark-mode"]);
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
-const navbarHeight = ref(80);
 
 // Navigation items
 const navItems = [
@@ -63,7 +63,7 @@ onUnmounted(() => {
           <span
             class="inline-block transform transition-transform duration-300 hover:scale-105"
           >
-            Héctor Rosario
+            {{ personalInfo.name }}
           </span>
         </a>
 

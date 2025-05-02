@@ -1,18 +1,5 @@
 <script setup>
-// Your personal information
-const personalInfo = {
-  name: "Your Name",
-  email: "your.email@example.com",
-  location: "Your City, Country",
-  education: "Bachelor/Master in Computer Science",
-  experience: "5+ years in .NET development",
-  interests: [
-    "Cloud Computing",
-    "Microservices",
-    "Software Architecture",
-    "DevOps",
-  ],
-};
+import { personalInfo } from "../../lib/consts";
 </script>
 
 <template>

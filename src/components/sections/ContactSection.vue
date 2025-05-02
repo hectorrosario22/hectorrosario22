@@ -39,20 +39,20 @@ const contactInfo = [
   {
     icon: "envelope",
     title: "Email",
-    value: "your.email@example.com",
-    link: "mailto:your.email@example.com",
+    value: "hectorjuniorrosario22@gmail.com",
+    link: "mailto:hectorjuniorrosario22@gmail.com",
   },
   {
     icon: ["fab", "github"],
     title: "GitHub",
-    value: "github.com/yourusername",
-    link: "https://github.com/yourusername",
+    value: "github.com/hectorrosario22",
+    link: "https://github.com/hectorrosario22",
   },
   {
     icon: ["fab", "linkedin"],
     title: "LinkedIn",
-    value: "linkedin.com/in/yourusername",
-    link: "https://linkedin.com/in/yourusername",
+    value: "linkedin.com/in/hector-rosario",
+    link: "https://linkedin.com/in/hector-rosario",
   },
 ];
 </script>

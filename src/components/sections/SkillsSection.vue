@@ -5,7 +5,7 @@ const skillCategories = [
     icon: "server",
     skills: [
       { name: "C#", level: 95, icon: ["fab", "microsoft"] },
-      { name: ".NET Core", level: 90, icon: ["fab", "dot-net"] },
+      { name: ".NET Core", level: 90, icon: ["fa", "server"] },
       { name: "ASP.NET Web API", level: 90, icon: "code" },
       { name: "Entity Framework", level: 85, icon: "database" },
       { name: "SQL Server", level: 80, icon: "database" },

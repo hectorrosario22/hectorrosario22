@@ -38,6 +38,8 @@ import {
   faTools,
   faLink,
   faGraduationCap,
+  faCloud,
+  faCodeBranch,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Smooth scroll
@@ -72,7 +74,9 @@ library.add(
   faProjectDiagram,
   faTools,
   faLink,
-  faGraduationCap
+  faGraduationCap,
+  faCloud,
+  faCodeBranch,
 );
 
 const app = createApp(App);
