@@ -1,8 +1,8 @@
-<script setup>
+<script setup lang="ts">
+import { personalData } from "../../data/personal";
 import { ref, onMounted, onUnmounted } from "vue";
-import { personalInfo } from "../../lib/consts";
 
-const props = defineProps({
+defineProps({
   isDarkMode: Boolean,
 });
 
@@ -63,7 +63,7 @@ onUnmounted(() => {
           <span
             class="inline-block transform transition-transform duration-300 hover:scale-105"
           >
-            {{ personalInfo.name }}
+            {{ personalData.name }}
           </span>
         </a>
 
@@ -83,7 +83,7 @@ onUnmounted(() => {
           <!-- Dark mode toggle -->
           <button
             @click="toggleDarkMode"
-            class="ml-2 p-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
+            class="ml-2 p-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors flex"
             aria-label="Toggle dark mode"
           >
             <font-awesome-icon
@@ -97,7 +97,7 @@ onUnmounted(() => {
         <div class="md:hidden flex items-center">
           <button
             @click="toggleDarkMode"
-            class="p-2 mr-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
+            class="p-2 mr-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors p-10 flex"
             aria-label="Toggle dark mode"
           >
             <font-awesome-icon

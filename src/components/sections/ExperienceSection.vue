@@ -1,72 +1,5 @@
-<script setup>
-// Experience timeline data
-const experiences = [
-  {
-    id: 1,
-    title: "Senior Backend Developer",
-    company: "Tech Company A",
-    period: "January 2022 - Present",
-    location: "Your City, Country",
-    description: [
-      "Lead development of microservices architecture using .NET Core and Docker",
-      "Designed and implemented RESTful APIs for enterprise applications",
-      "Optimized database performance resulting in 40% faster query response times",
-      "Mentored junior developers and conducted code reviews",
-      "Implemented CI/CD pipelines using Azure DevOps",
-    ],
-    technologies: [
-      ".NET Core",
-      "C#",
-      "Microservices",
-      "Docker",
-      "Azure",
-      "SQL Server",
-    ],
-  },
-  {
-    id: 2,
-    title: "Backend Developer",
-    company: "Software Solutions Inc.",
-    period: "June 2019 - December 2021",
-    location: "Your City, Country",
-    description: [
-      "Developed and maintained ASP.NET Core Web APIs",
-      "Integrated applications with third-party services via RESTful APIs",
-      "Implemented authentication and authorization using Identity Server",
-      "Wrote unit and integration tests for backend services",
-      "Collaborated with frontend team to ensure seamless API integration",
-    ],
-    technologies: [
-      ".NET Core",
-      "C#",
-      "ASP.NET Web API",
-      "Entity Framework",
-      "SQL Server",
-      "Azure",
-    ],
-  },
-  {
-    id: 3,
-    title: "Junior .NET Developer",
-    company: "Digital Solutions Ltd.",
-    period: "September 2017 - May 2019",
-    location: "Your City, Country",
-    description: [
-      "Developed features for .NET Framework applications",
-      "Created and maintained stored procedures and SQL queries",
-      "Fixed bugs and improved application performance",
-      "Participated in daily stand-ups and sprint planning",
-      "Learned and implemented best practices in C# development",
-    ],
-    technologies: [
-      ".NET Framework",
-      "C#",
-      "WinForms",
-      "SQL Server",
-      "Entity Framework",
-    ],
-  },
-];
+<script setup lang="ts">
+import { experienceData } from "../../data/experience";
 </script>
 
 <template>
@@ -85,7 +18,7 @@ const experiences = [
 
       <div>
         <div
-          v-for="(experience, index) in experiences"
+          v-for="(experience, index) in experienceData.work"
           :key="experience.id"
           class="mb-12 relative"
         >
@@ -178,45 +111,30 @@ const experiences = [
           <div class="flex justify-between items-start">
             <div>
               <h4 class="text-xl font-bold text-secondary-900 dark:text-white">
-                Bachelor/Master of Computer Science
+                {{ experienceData.education.degree }}
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
-                University Name
+                {{ experienceData.education.institution }}
               </p>
             </div>
             <span
               class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-300 text-sm font-medium rounded-full"
             >
-              2013 - 2017
+              {{ experienceData.education.period }}
             </span>
           </div>
 
           <p class="mt-4 text-secondary-600 dark:text-secondary-300">
-            Graduated with honors. Specialized in software engineering with
-            focus on enterprise application development. Completed thesis on
-            "Optimizing Performance in Distributed Systems".
+            {{ experienceData.education.description }}
           </p>
 
           <div class="flex flex-wrap gap-2 mt-4">
             <span
+              v-for="(skill, index) in experienceData.education.skills"
+              :key="index"
               class="px-3 py-1 bg-secondary-100 dark:bg-secondary-700 text-secondary-600 dark:text-secondary-300 text-xs rounded-full"
             >
-              Software Engineering
-            </span>
-            <span
-              class="px-3 py-1 bg-secondary-100 dark:bg-secondary-700 text-secondary-600 dark:text-secondary-300 text-xs rounded-full"
-            >
-              Algorithms
-            </span>
-            <span
-              class="px-3 py-1 bg-secondary-100 dark:bg-secondary-700 text-secondary-600 dark:text-secondary-300 text-xs rounded-full"
-            >
-              Database Systems
-            </span>
-            <span
-              class="px-3 py-1 bg-secondary-100 dark:bg-secondary-700 text-secondary-600 dark:text-secondary-300 text-xs rounded-full"
-            >
-              Distributed Computing
+              {{ skill }}
             </span>
           </div>
         </div>

@@ -1,6 +1,5 @@
-<script setup>
-import { ref, onMounted, onUnmounted, computed, watch } from "vue";
-import { useRoute } from "vue-router";
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
 import { useWindowScroll } from "@vueuse/core";
 import Navbar from "./components/layout/Navbar.vue";
 import Footer from "./components/layout/Footer.vue";

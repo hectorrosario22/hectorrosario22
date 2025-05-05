@@ -1,5 +1,5 @@
-<script setup>
-import { personalInfo } from "../../lib/consts";
+<script setup lang="ts">
+import { personalData } from "../../data/personal";
 </script>
 
 <template>
@@ -41,18 +41,11 @@ import { personalInfo } from "../../lib/consts";
         </h3>
 
         <p class="text-secondary-700 dark:text-secondary-300 mb-6">
-          I'm a specialized backend developer with expertise in .NET
-          technologies including C#, ASP.NET Core, Entity Framework, and SQL
-          Server. With a strong foundation in designing, developing and
-          maintaining robust, scalable applications, I focus on creating
-          efficient, high-quality solutions for complex business problems.
+          {{ personalData.bio.long[0] }}
         </p>
 
         <p class="text-secondary-700 dark:text-secondary-300 mb-6">
-          My approach combines technical expertise with a deep understanding of
-          business needs, allowing me to build applications that deliver real
-          value. I'm passionate about clean architecture, performance
-          optimization, and following best practices in software development.
+          {{ personalData.bio.long[1] }}
         </p>
 
         <!-- Personal details -->
@@ -67,7 +60,7 @@ import { personalInfo } from "../../lib/consts";
                 Email
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
-                {{ personalInfo.email }}
+                {{ personalData.email }}
               </p>
             </div>
           </div>
@@ -82,7 +75,7 @@ import { personalInfo } from "../../lib/consts";
                 Location
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
-                {{ personalInfo.location }}
+                {{ personalData.location }}
               </p>
             </div>
           </div>
@@ -97,7 +90,7 @@ import { personalInfo } from "../../lib/consts";
                 Education
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
-                {{ personalInfo.education }}
+                {{ personalData.education }}
               </p>
             </div>
           </div>
@@ -112,7 +105,7 @@ import { personalInfo } from "../../lib/consts";
                 Experience
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
-                {{ personalInfo.experience }}
+                {{ personalData.experience }}
               </p>
             </div>
           </div>

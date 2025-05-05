@@ -1,8 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
+import { personalData } from "../../data/personal";
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
 // Form data
-const formData = ref({
+const formData = ref<FormData>({
   name: "",
   email: "",
   subject: "",
@@ -12,10 +20,10 @@ const formData = ref({
 // Form status
 const isSubmitting = ref(false);
 const isSubmitted = ref(false);
-const submitError = ref(null);
+const submitError = ref<string | null>(null);
 
 // Handle form submit
-const handleSubmit = async (e) => {
+const handleSubmit = async (e: Event) => {
   e.preventDefault();
   isSubmitting.value = true;
   submitError.value = null;
@@ -39,20 +47,20 @@ const contactInfo = [
   {
     icon: "envelope",
     title: "Email",
-    value: "hectorjuniorrosario22@gmail.com",
-    link: "mailto:hectorjuniorrosario22@gmail.com",
+    value: personalData.email,
+    link: `mailto:${personalData.email}`,
   },
   {
     icon: ["fab", "github"],
     title: "GitHub",
-    value: "github.com/hectorrosario22",
-    link: "https://github.com/hectorrosario22",
+    value: personalData.social.github.replace("https://", ""),
+    link: personalData.social.github,
   },
   {
     icon: ["fab", "linkedin"],
     title: "LinkedIn",
-    value: "linkedin.com/in/hector-rosario",
-    link: "https://linkedin.com/in/hector-rosario",
+    value: personalData.social.linkedin.replace("https://", ""),
+    link: personalData.social.linkedin,
   },
 ];
 </script>

@@ -76,7 +76,7 @@ library.add(
   faLink,
   faGraduationCap,
   faCloud,
-  faCodeBranch,
+  faCodeBranch
 );
 
 const app = createApp(App);
