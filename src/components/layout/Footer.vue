@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { personalData } from "../../data/personal";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 // Social links
-const socialLinks = [
+const socialLinks = computed(() => [
   {
     name: "Github",
     icon: ["fab", "github"],
@@ -13,8 +17,12 @@ const socialLinks = [
     icon: ["fab", "linkedin"],
     url: personalData.social.linkedin,
   },
-  { name: "Email", icon: "envelope", url: `mailto:${personalData.email}` },
-];
+  {
+    name: t("about.email"),
+    icon: "envelope",
+    url: `mailto:${personalData.email}`,
+  },
+]);
 </script>
 
 <template>
@@ -38,6 +46,7 @@ const socialLinks = [
             :key="link.name"
             :href="link.url"
             :aria-label="link.name"
+            :title="link.name"
             target="_blank"
             rel="noopener noreferrer"
             class="p-2 rounded-full bg-white dark:bg-secondary-700 text-secondary-800 dark:text-white hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 transition-colors duration-300 flex"

@@ -1,17 +1,18 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import { experienceData } from "../../data/experience";
+
+const { t } = useI18n();
 </script>
 
 <template>
   <section id="experience" class="section">
-    <h2 class="section-title">Work Experience</h2>
+    <h2 class="section-title">{{ t("experience.title") }}</h2>
     <p class="section-subtitle">
-      My professional journey and career highlights
+      {{ t("experience.subtitle") }}
     </p>
 
-    <!-- Timeline -->
     <div class="relative">
-      <!-- Timeline line -->
       <div
         class="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-secondary-200 dark:bg-secondary-700"
       ></div>
@@ -22,7 +23,6 @@ import { experienceData } from "../../data/experience";
           :key="experience.id"
           class="mb-12 relative"
         >
-          <!-- Timeline dot -->
           <div
             class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-primary-500 border-4 border-white dark:border-secondary-900 z-10"
           ></div>
@@ -98,12 +98,11 @@ import { experienceData } from "../../data/experience";
       </div>
     </div>
 
-    <!-- Education section -->
     <div class="mt-20">
       <h3
         class="text-2xl font-bold text-center text-secondary-900 dark:text-white mb-12"
       >
-        Education
+        {{ t("experience.education") }}
       </h3>
 
       <div class="max-w-2xl mx-auto">

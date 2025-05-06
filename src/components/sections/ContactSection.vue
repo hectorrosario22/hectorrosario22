@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { useI18n } from "vue-i18n";
 import { personalData } from "../../data/personal";
+
+const { t } = useI18n();
 
 interface FormData {
   name: string;
@@ -9,7 +12,6 @@ interface FormData {
   message: string;
 }
 
-// Form data
 const formData = ref<FormData>({
   name: "",
   email: "",
@@ -17,36 +19,30 @@ const formData = ref<FormData>({
   message: "",
 });
 
-// Form status
 const isSubmitting = ref(false);
 const isSubmitted = ref(false);
 const submitError = ref<string | null>(null);
 
-// Handle form submit
 const handleSubmit = async (e: Event) => {
   e.preventDefault();
   isSubmitting.value = true;
   submitError.value = null;
 
   try {
-    // In a real implementation, you would send this data to a backend service
-    // For now, we'll just simulate a successful submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
     isSubmitted.value = true;
     formData.value = { name: "", email: "", subject: "", message: "" };
   } catch (error) {
-    submitError.value =
-      "There was an error sending your message. Please try again.";
+    submitError.value = t("contact.form.error");
   } finally {
     isSubmitting.value = false;
   }
 };
 
-// Contact information
-const contactInfo = [
+const contactInfo = computed(() => [
   {
     icon: "envelope",
-    title: "Email",
+    title: t("about.email"),
     value: personalData.email,
     link: `mailto:${personalData.email}`,
   },
@@ -62,7 +58,7 @@ const contactInfo = [
     value: personalData.social.linkedin.replace("https://", ""),
     link: personalData.social.linkedin,
   },
-];
+]);
 </script>
 
 <template>
@@ -70,13 +66,12 @@ const contactInfo = [
     id="contact"
     class="section bg-secondary-50 dark:bg-secondary-800/30"
   >
-    <h2 class="section-title">Get In Touch</h2>
+    <h2 class="section-title">{{ t("contact.title") }}</h2>
     <p class="section-subtitle">
-      Feel free to reach out for collaborations or just a friendly chat
+      {{ t("contact.subtitle") }}
     </p>
 
     <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-      <!-- Contact information -->
       <div>
         <div
           v-for="item in contactInfo"
@@ -108,11 +103,10 @@ const contactInfo = [
         </div>
       </div>
 
-      <!-- Contact form -->
       <div class="md:col-span-2">
         <div class="card p-8 hover:shadow-xl transition-all duration-300">
           <h3 class="text-xl font-bold text-secondary-900 dark:text-white mb-6">
-            Send Me a Message
+            {{ t("contact.title") }}
           </h3>
 
           <form @submit="handleSubmit">
@@ -122,7 +116,7 @@ const contactInfo = [
                   for="name"
                   class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2"
                 >
-                  Your Name
+                  {{ t("contact.form.name") }}
                 </label>
                 <input
                   id="name"
@@ -130,7 +124,7 @@ const contactInfo = [
                   type="text"
                   required
                   class="w-full p-3 border border-secondary-300 dark:border-secondary-600 rounded-md bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                  placeholder="John Doe"
+                  :placeholder="t('contact.form.name')"
                 />
               </div>
 
@@ -139,7 +133,7 @@ const contactInfo = [
                   for="email"
                   class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2"
                 >
-                  Your Email
+                  {{ t("contact.form.email") }}
                 </label>
                 <input
                   id="email"
@@ -147,7 +141,7 @@ const contactInfo = [
                   type="email"
                   required
                   class="w-full p-3 border border-secondary-300 dark:border-secondary-600 rounded-md bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                  placeholder="john@example.com"
+                  :placeholder="t('contact.form.email')"
                 />
               </div>
             </div>
@@ -157,7 +151,7 @@ const contactInfo = [
                 for="subject"
                 class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2"
               >
-                Subject
+                {{ t("contact.form.subject") }}
               </label>
               <input
                 id="subject"
@@ -165,7 +159,7 @@ const contactInfo = [
                 type="text"
                 required
                 class="w-full p-3 border border-secondary-300 dark:border-secondary-600 rounded-md bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                placeholder="Project Inquiry"
+                :placeholder="t('contact.form.subject')"
               />
             </div>
 
@@ -174,7 +168,7 @@ const contactInfo = [
                 for="message"
                 class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2"
               >
-                Message
+                {{ t("contact.form.message") }}
               </label>
               <textarea
                 id="message"
@@ -182,7 +176,7 @@ const contactInfo = [
                 required
                 rows="5"
                 class="w-full p-3 border border-secondary-300 dark:border-secondary-600 rounded-md bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
-                placeholder="Your message here..."
+                :placeholder="t('contact.form.message')"
               ></textarea>
             </div>
 
@@ -192,21 +186,19 @@ const contactInfo = [
                 class="btn btn-primary"
                 :disabled="isSubmitting"
               >
-                <span v-if="isSubmitting">Sending...</span>
-                <span v-else>Send Message</span>
+                <span v-if="isSubmitting">{{ t("contact.form.sending") }}</span>
+                <span v-else>{{ t("contact.form.send") }}</span>
                 <font-awesome-icon icon="arrow-right" v-if="!isSubmitting" />
               </button>
             </div>
 
-            <!-- Success message -->
             <div
               v-if="isSubmitted"
               class="mt-4 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md"
             >
-              Thank you! Your message has been sent successfully.
+              {{ t("contact.form.success") }}
             </div>
 
-            <!-- Error message -->
             <div
               v-if="submitError"
               class="mt-4 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md"

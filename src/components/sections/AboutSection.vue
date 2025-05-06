@@ -1,19 +1,20 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import { personalData } from "../../data/personal";
+
+const { t } = useI18n();
 </script>
 
 <template>
   <section id="about" class="section bg-secondary-50 dark:bg-secondary-800/30">
-    <h2 class="section-title" data-aos="fade-up">About Me</h2>
+    <h2 class="section-title" data-aos="fade-up">{{ t("about.title") }}</h2>
     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-      Get to know more about me and my professional journey
+      {{ t("about.subtitle") }}
     </p>
 
     <div class="grid md:grid-cols-2 gap-12 items-center">
-      <!-- Profile Image -->
       <div class="order-2 md:order-1">
         <div class="relative">
-          <!-- Using a placeholder image - replace with your own image when deploying -->
           <div
             class="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden shadow-xl"
           >
@@ -24,7 +25,6 @@ import { personalData } from "../../data/personal";
             />
           </div>
 
-          <!-- Decorative elements -->
           <div
             class="absolute -bottom-6 -left-6 w-24 h-24 bg-primary-500 rounded-lg -z-10"
           ></div>
@@ -34,10 +34,9 @@ import { personalData } from "../../data/personal";
         </div>
       </div>
 
-      <!-- Bio Content -->
       <div class="order-1 md:order-2">
         <h3 class="text-2xl font-bold text-secondary-900 dark:text-white mb-4">
-          Who am I?
+          {{ t("about.whoAmI") }}
         </h3>
 
         <p class="text-secondary-700 dark:text-secondary-300 mb-6">
@@ -48,7 +47,6 @@ import { personalData } from "../../data/personal";
           {{ personalData.bio.long[1] }}
         </p>
 
-        <!-- Personal details -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <div class="flex items-start">
             <font-awesome-icon
@@ -57,7 +55,7 @@ import { personalData } from "../../data/personal";
             />
             <div>
               <h4 class="font-semibold text-secondary-900 dark:text-white">
-                Email
+                {{ t("about.email") }}
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
                 {{ personalData.email }}
@@ -72,7 +70,7 @@ import { personalData } from "../../data/personal";
             />
             <div>
               <h4 class="font-semibold text-secondary-900 dark:text-white">
-                Location
+                {{ t("about.location") }}
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
                 {{ personalData.location }}
@@ -87,7 +85,7 @@ import { personalData } from "../../data/personal";
             />
             <div>
               <h4 class="font-semibold text-secondary-900 dark:text-white">
-                Education
+                {{ t("about.education") }}
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
                 {{ personalData.education }}
@@ -102,7 +100,7 @@ import { personalData } from "../../data/personal";
             />
             <div>
               <h4 class="font-semibold text-secondary-900 dark:text-white">
-                Experience
+                {{ t("about.experience") }}
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
                 {{ personalData.experience }}
@@ -112,7 +110,7 @@ import { personalData } from "../../data/personal";
         </div>
 
         <a href="#contact" class="btn btn-primary">
-          Get In Touch
+          {{ t("about.getInTouch") }}
           <font-awesome-icon icon="arrow-right" />
         </a>
       </div>

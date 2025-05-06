@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import { skillsData } from "../../data/skills";
+
+const { t } = useI18n();
 </script>
 
 <template>
   <section id="skills" class="section">
-    <h2 class="section-title">My Skills</h2>
+    <h2 class="section-title">{{ t("skills.title") }}</h2>
     <p class="section-subtitle">
-      Here are the technologies and methodologies I specialize in
+      {{ t("skills.subtitle") }}
     </p>
 
     <div class="grid md:grid-cols-2 gap-8">

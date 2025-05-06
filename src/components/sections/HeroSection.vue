@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { personalData } from "../../data/personal";
+import { useI18n } from "vue-i18n";
 
-const titles = [
-  ".NET Developer",
-  "Backend Specialist",
-  "C# Expert",
-  "Software Architect",
-];
-const currentTitle = ref(titles[0]);
+const { t } = useI18n();
+
+const titles = computed(() => [
+  t("hero.titles.t1"),
+  t("hero.titles.t2"),
+  t("hero.titles.t3"),
+  t("hero.titles.t4"),
+]);
+const currentTitle = ref(titles.value[0]);
 const currentIndex = ref(0);
 const isDeleting = ref(false);
 const typingSpeed = ref(100);
@@ -16,7 +19,7 @@ const deletingSpeed = ref(50);
 const pauseDelay = 1500;
 
 const typeText = () => {
-  const current = titles[currentIndex.value];
+  const current = titles.value[currentIndex.value];
 
   if (isDeleting.value) {
     currentTitle.value = current.substring(0, currentTitle.value.length - 1);
@@ -31,7 +34,7 @@ const typeText = () => {
     isDeleting.value = true;
   } else if (isDeleting.value && currentTitle.value === "") {
     isDeleting.value = false;
-    currentIndex.value = (currentIndex.value + 1) % titles.length;
+    currentIndex.value = (currentIndex.value + 1) % titles.value.length;
   }
 
   setTimeout(typeText, typeSpeed);
@@ -47,7 +50,6 @@ onMounted(() => {
     id="home"
     class="min-h-screen flex items-center relative overflow-hidden"
   >
-    <!-- Background pattern with dark mode support -->
     <div
       class="absolute inset-0 opacity-10 dark:opacity-5 bg-gradient-to-br from-primary-500 to-secondary-500 pointer-events-none"
     ></div>
@@ -57,7 +59,7 @@ onMounted(() => {
         <p
           class="text-primary-500 font-medium text-lg md:text-xl mb-4 animate-fade-in"
         >
-          Hello, my name is
+          {{ t("hero.greeting") }}
         </p>
         <h1
           class="text-4xl md:text-6xl font-bold text-secondary-900 dark:text-white mb-4 animate-slide-up"
@@ -83,15 +85,16 @@ onMounted(() => {
           style="animation-delay: 0.4s"
         >
           <a href="#projects" class="btn btn-primary">
-            View My Work
+            {{ t("projects.title") }}
             <font-awesome-icon icon="arrow-right" />
           </a>
-          <a href="#contact" class="btn btn-outline"> Contact Me </a>
+          <a href="#contact" class="btn btn-outline">
+            {{ t("contact.title") }}
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- Decorative elements -->
     <div
       class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce"
     >

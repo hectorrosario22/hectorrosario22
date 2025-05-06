@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { projectsData } from "../../data/projects";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const selectedCategory = ref("all");
 
@@ -20,8 +23,8 @@ const handleCategoryChange = (category: string) => {
 
 <template>
   <section id="projects" class="section">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-subtitle">A selection of my recent development work</p>
+    <h2 class="section-title">{{ t("projects.title") }}</h2>
+    <p class="section-subtitle">{{ t("projects.subtitle") }}</p>
 
     <!-- Project Categories -->
     <div class="flex flex-wrap justify-center gap-4 mb-12">
@@ -69,7 +72,7 @@ const handleCategoryChange = (category: string) => {
                 rel="noopener noreferrer"
                 class="btn btn-primary py-2 px-4 mr-2"
               >
-                Live Demo
+                {{ t("projects.liveDemo") }}
                 <font-awesome-icon icon="arrow-right" />
               </a>
               <a
@@ -78,7 +81,7 @@ const handleCategoryChange = (category: string) => {
                 rel="noopener noreferrer"
                 class="btn btn-outline py-2 px-4 border-white text-white hover:bg-white hover:text-secondary-900"
               >
-                View Code
+                {{ t("projects.viewCode") }}
                 <font-awesome-icon :icon="['fab', 'github']" />
               </a>
             </div>

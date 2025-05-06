@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { personalData } from "../../data/personal";
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, computed } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t, locale } = useI18n();
 
 defineProps({
   isDarkMode: Boolean,
@@ -11,15 +14,21 @@ const emit = defineEmits(["toggle-dark-mode"]);
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
 
-// Navigation items
-const navItems = [
-  { name: "Home", href: "#home", icon: "home" },
-  { name: "About", href: "#about", icon: "user" },
-  { name: "Skills", href: "#skills", icon: "tools" },
-  { name: "Projects", href: "#projects", icon: "project-diagram" },
-  { name: "Experience", href: "#experience", icon: "briefcase" },
-  { name: "Contact", href: "#contact", icon: "envelope" },
-];
+// Navigation items - make it computed to react to language changes
+const navItems = computed(() => [
+  { name: t("nav.home"), href: "#home", icon: "home" },
+  { name: t("nav.about"), href: "#about", icon: "user" },
+  { name: t("nav.skills"), href: "#skills", icon: "tools" },
+  { name: t("nav.projects"), href: "#projects", icon: "project-diagram" },
+  { name: t("nav.experience"), href: "#experience", icon: "briefcase" },
+  { name: t("nav.contact"), href: "#contact", icon: "envelope" },
+]);
+
+// Toggle language
+const toggleLanguage = () => {
+  locale.value = locale.value === "en" ? "es" : "en";
+  localStorage.setItem("language", locale.value);
+};
 
 // Handle scroll events
 const handleScroll = () => {
@@ -80,11 +89,26 @@ onUnmounted(() => {
             {{ item.name }}
           </a>
 
+          <!-- Language toggle -->
+          <button
+            @click="toggleLanguage"
+            class="ml-2 p-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors w-10 h-10 flex items-center justify-center"
+            :title="locale === 'en' ? 'Cambiar a Español' : 'Switch to English'"
+          >
+            <span
+              class="text-secondary-600 dark:text-secondary-200 font-medium"
+            >
+              {{ locale === "en" ? "ES" : "EN" }}
+            </span>
+          </button>
+
           <!-- Dark mode toggle -->
           <button
             @click="toggleDarkMode"
-            class="ml-2 p-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors flex"
-            aria-label="Toggle dark mode"
+            class="ml-2 p-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors w-10 h-10 flex items-center justify-center"
+            :aria-label="
+              isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
+            "
           >
             <font-awesome-icon
               :icon="isDarkMode ? 'sun' : 'moon'"
@@ -95,10 +119,24 @@ onUnmounted(() => {
 
         <!-- Mobile Menu Button -->
         <div class="md:hidden flex items-center">
+          <!-- Language toggle mobile -->
+          <button
+            @click="toggleLanguage"
+            class="p-2 mr-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
+          >
+            <span
+              class="text-secondary-600 dark:text-secondary-200 font-medium"
+            >
+              {{ locale === "en" ? "ES" : "EN" }}
+            </span>
+          </button>
+
           <button
             @click="toggleDarkMode"
-            class="p-2 mr-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors p-10 flex"
-            aria-label="Toggle dark mode"
+            class="p-2 mr-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors w-10 h-10 flex items-center justify-center"
+            :aria-label="
+              isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
+            "
           >
             <font-awesome-icon
               :icon="isDarkMode ? 'sun' : 'moon'"
