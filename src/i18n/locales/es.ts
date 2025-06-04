@@ -5,7 +5,6 @@ export default {
     skills: "Habilidades",
     projects: "Proyectos",
     experience: "Experiencia",
-    contact: "Contacto",
   },
   hero: {
     greeting: "Hola, mi nombre es",
@@ -13,7 +12,6 @@ export default {
       t1: "Desarrollador .NET",
       t2: "Especialista Backend",
       t3: "Experto en C#",
-      t4: "Arquitecto de Software",
     },
   },
   about: {
@@ -41,20 +39,5 @@ export default {
     title: "Experiencia Laboral",
     subtitle: "Mi trayectoria profesional y logros destacados",
     education: "Educación",
-  },
-  contact: {
-    title: "Contacto",
-    subtitle:
-      "No dudes en contactarme para colaboraciones o simplemente para charlar",
-    form: {
-      name: "Tu Nombre",
-      email: "Tu Correo",
-      subject: "Asunto",
-      message: "Mensaje",
-      send: "Enviar Mensaje",
-      sending: "Enviando...",
-      success: "¡Gracias! Tu mensaje ha sido enviado exitosamente.",
-      error: "Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo.",
-    },
   },
 };

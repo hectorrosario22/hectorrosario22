@@ -9,7 +9,6 @@ const titles = computed(() => [
   t("hero.titles.t1"),
   t("hero.titles.t2"),
   t("hero.titles.t3"),
-  t("hero.titles.t4"),
 ]);
 const currentTitle = ref(titles.value[0]);
 const currentIndex = ref(0);
@@ -87,9 +86,6 @@ onMounted(() => {
           <a href="#projects" class="btn btn-primary">
             {{ t("projects.title") }}
             <font-awesome-icon icon="arrow-right" />
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            {{ t("contact.title") }}
           </a>
         </div>
       </div>

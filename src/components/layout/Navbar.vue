@@ -21,7 +21,6 @@ const navItems = computed(() => [
   { name: t("nav.skills"), href: "#skills", icon: "tools" },
   { name: t("nav.projects"), href: "#projects", icon: "project-diagram" },
   { name: t("nav.experience"), href: "#experience", icon: "briefcase" },
-  { name: t("nav.contact"), href: "#contact", icon: "envelope" },
 ]);
 
 // Toggle language
