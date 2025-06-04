@@ -108,11 +108,6 @@ const { t } = useI18n();
             </div>
           </div>
         </div>
-
-        <a href="#contact" class="btn btn-primary">
-          {{ t("about.getInTouch") }}
-          <font-awesome-icon icon="arrow-right" />
-        </a>
       </div>
     </div>
   </section>

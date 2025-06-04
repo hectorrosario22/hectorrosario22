@@ -41,6 +41,7 @@ import {
   faGraduationCap,
   faCloud,
   faCodeBranch,
+  faCalendarAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Smooth scroll
@@ -77,7 +78,8 @@ library.add(
   faLink,
   faGraduationCap,
   faCloud,
-  faCodeBranch
+  faCodeBranch,
+  faCalendarAlt,
 );
 
 const app = createApp(App);

@@ -32,37 +32,39 @@ const { t } = useI18n();
             :class="index % 2 === 0 ? 'md:ml-auto' : ''"
           >
             <div class="card p-6 hover:shadow-xl transition-all duration-300">
-              <div
-                class="flex flex-col md:flex-row justify-between md:items-center mb-4"
-              >
+              <div class="mb-4">
                 <h3
                   class="text-xl font-bold text-secondary-900 dark:text-white"
                 >
                   {{ experience.title }}
                 </h3>
-                <span
-                  class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-300 text-sm font-medium rounded-full mt-2 md:mt-0"
-                >
-                  {{ experience.period }}
-                </span>
               </div>
 
               <div class="mb-4">
                 <div
-                  class="flex items-center text-secondary-700 dark:text-secondary-300"
+                  class="flex items-center text-secondary-700 dark:text-secondary-300 mb-1"
                 >
                   <font-awesome-icon
                     icon="briefcase"
-                    class="mr-2 text-primary-500"
+                    class="mr-1 text-primary-500 w-5 h-5 flex-shrink-0"
                   />
                   <span class="font-medium">{{ experience.company }}</span>
                 </div>
                 <div
-                  class="flex items-center text-secondary-600 dark:text-secondary-400 mt-1"
+                  class="flex items-center text-secondary-600 dark:text-secondary-400 mb-1"
+                >
+                  <font-awesome-icon
+                    icon="calendar-alt"
+                    class="mr-1 text-primary-500 w-5 h-5 flex-shrink-0"
+                  />
+                  <span>{{ experience.period }}</span>
+                </div>
+                <div
+                  class="flex items-center text-secondary-600 dark:text-secondary-400"
                 >
                   <font-awesome-icon
                     icon="globe"
-                    class="mr-2 text-primary-500"
+                    class="mr-1 text-primary-500 w-5 h-5 flex-shrink-0"
                   />
                   <span>{{ experience.location }}</span>
                 </div>
@@ -75,7 +77,7 @@ const { t } = useI18n();
                   class="flex"
                 >
                   <span
-                    class="inline-block w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 mr-2"
+                    class="inline-block w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 mr-2 flex-shrink-0"
                   ></span>
                   <span class="text-secondary-600 dark:text-secondary-300">{{
                     item
@@ -112,15 +114,25 @@ const { t } = useI18n();
               <h4 class="text-xl font-bold text-secondary-900 dark:text-white">
                 {{ experienceData.education.degree }}
               </h4>
-              <p class="text-secondary-600 dark:text-secondary-400">
-                {{ experienceData.education.institution }}
-              </p>
+              <div
+                class="flex items-center text-secondary-600 dark:text-secondary-400 mt-1"
+              >
+                <font-awesome-icon
+                  icon="graduation-cap"
+                  class="mr-1 text-primary-500 w-5 h-5 flex-shrink-0"
+                />
+                <span>{{ experienceData.education.institution }}</span>
+              </div>
+              <div
+                class="flex items-center text-secondary-600 dark:text-secondary-400 mt-1"
+              >
+                <font-awesome-icon
+                  icon="calendar-alt"
+                  class="mr-1 text-primary-500 w-5 h-5 flex-shrink-0"
+                />
+                <span>{{ experienceData.education.period }}</span>
+              </div>
             </div>
-            <span
-              class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-300 text-sm font-medium rounded-full"
-            >
-              {{ experienceData.education.period }}
-            </span>
           </div>
 
           <p class="mt-4 text-secondary-600 dark:text-secondary-300">
