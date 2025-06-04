@@ -19,7 +19,7 @@ const { t } = useI18n();
             class="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden shadow-xl"
           >
             <img
-              src="https://images.pexels.com/photos/5935794/pexels-photo-5935794.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/images/about/me.webp"
               alt="Profile Image"
               class="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
             />
