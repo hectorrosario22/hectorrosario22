@@ -1,4 +1,3 @@
-import type { ProjectCategory, Project } from "../types";
 import { useI18n } from "vue-i18n";
 
 export const useProjectsData = () => {
