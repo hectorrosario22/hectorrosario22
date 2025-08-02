@@ -1,25 +1,25 @@
 import type { ProjectCategory, Project } from "../types";
+import { useI18n } from "vue-i18n";
 
-export const projectsData: {
-  categories: ProjectCategory[];
-  projects: Project[];
-} = {
-  categories: [
-    { id: "all", name: "All" },
-    { id: "cli", name: "CLI" },
-  ],
-  projects: [
-    {
-      id: 1,
-      title: "Expense Tracker",
-      description:
-        "A command-line application built with .NET 9 and Cocona to manage personal expenses. It supports categorization, CSV export, budget tracking, and local JSON persistence.",
-      image:
-        "images/projects/expense-tracker.webp",
-      category: ["cli"],
-      technologies: ["C#", ".NET 9", "Cocona", "JSON", "CSV"],
-      githubUrl: "https://github.com/hectorrosario22/ExpenseTracker",
-      demoUrl: null,
-    },
-  ],
+export const useProjectsData = () => {
+  const { t } = useI18n();
+  
+  return {
+    categories: [
+      { id: "all", name: t("projects.all") },
+      { id: "cli", name: "CLI" },
+    ],
+    projects: [
+      {
+        id: 1,
+        title: t("projects.expenseTracker.title"),
+        description: t("projects.expenseTracker.description"),
+        image: "images/projects/expense-tracker.webp",
+        category: ["cli"],
+        technologies: ["C#", ".NET 9", "Cocona", "JSON", "CSV"],
+        githubUrl: "https://github.com/hectorrosario22/ExpenseTracker",
+        demoUrl: null,
+      },
+    ],
+  };
 };

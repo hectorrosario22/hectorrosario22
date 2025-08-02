@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
-import { personalData } from "../../data/personal";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
@@ -63,7 +62,7 @@ onMounted(() => {
         <h1
           class="text-4xl md:text-6xl font-bold text-secondary-900 dark:text-white mb-4 animate-slide-up"
         >
-          {{ personalData.name }}
+          {{ t("personal.name") }}
         </h1>
 
         <div
@@ -76,7 +75,7 @@ onMounted(() => {
           class="text-lg md:text-xl text-secondary-600 dark:text-secondary-300 mb-8 max-w-2xl animate-slide-up"
           style="animation-delay: 0.2s"
         >
-          {{ personalData.bio.short }}
+          {{ t("personal.bio.short") }}
         </p>
 
         <div

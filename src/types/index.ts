@@ -8,7 +8,7 @@ export interface PersonalInfo {
   interests: string[];
   bio: {
     short: string;
-    long: string[];
+    long: string;
   };
   social: {
     github: string;

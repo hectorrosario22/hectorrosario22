@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { personalData } from "../../data/personal";
 import { ref, onMounted, onUnmounted, computed } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -71,7 +70,7 @@ onUnmounted(() => {
           <span
             class="inline-block transform transition-transform duration-300 hover:scale-105"
           >
-            {{ personalData.name }}
+            {{ t("personal.name") }}
           </span>
         </a>
 
@@ -93,6 +92,7 @@ onUnmounted(() => {
             @click="toggleLanguage"
             class="ml-2 p-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors w-10 h-10 flex items-center justify-center"
             :title="locale === 'en' ? 'Cambiar a Español' : 'Switch to English'"
+            :aria-label="t('ui.ariaLabels.toggleLanguage')"
           >
             <span
               class="text-secondary-600 dark:text-secondary-200 font-medium"
@@ -105,9 +105,7 @@ onUnmounted(() => {
           <button
             @click="toggleDarkMode"
             class="ml-2 p-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors w-10 h-10 flex items-center justify-center"
-            :aria-label="
-              isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
-            "
+            :aria-label="isDarkMode ? t('ui.ariaLabels.switchToLight') : t('ui.ariaLabels.switchToDark')"
           >
             <font-awesome-icon
               :icon="isDarkMode ? 'sun' : 'moon'"
@@ -122,6 +120,7 @@ onUnmounted(() => {
           <button
             @click="toggleLanguage"
             class="p-2 mr-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
+            :aria-label="t('ui.ariaLabels.toggleLanguage')"
           >
             <span
               class="text-secondary-600 dark:text-secondary-200 font-medium"
@@ -133,9 +132,7 @@ onUnmounted(() => {
           <button
             @click="toggleDarkMode"
             class="p-2 mr-2 rounded-full hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors w-10 h-10 flex items-center justify-center"
-            :aria-label="
-              isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
-            "
+            :aria-label="isDarkMode ? t('ui.ariaLabels.switchToLight') : t('ui.ariaLabels.switchToDark')"
           >
             <font-awesome-icon
               :icon="isDarkMode ? 'sun' : 'moon'"
@@ -146,7 +143,7 @@ onUnmounted(() => {
           <button
             @click="isMobileMenuOpen = !isMobileMenuOpen"
             class="p-2 rounded-md text-secondary-600 dark:text-secondary-200 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
-            aria-label="Toggle menu"
+            :aria-label="t('ui.ariaLabels.toggleMenu')"
           >
             <font-awesome-icon
               :icon="isMobileMenuOpen ? 'xmark' : 'bars'"

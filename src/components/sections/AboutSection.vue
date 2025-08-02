@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { personalData } from "../../data/personal";
 
 const { t } = useI18n();
 </script>
@@ -40,11 +39,7 @@ const { t } = useI18n();
         </h3>
 
         <p class="text-secondary-700 dark:text-secondary-300 mb-6">
-          {{ personalData.bio.long[0] }}
-        </p>
-
-        <p class="text-secondary-700 dark:text-secondary-300 mb-6">
-          {{ personalData.bio.long[1] }}
+          {{ t("personal.bio.long") }}
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -58,7 +53,7 @@ const { t } = useI18n();
                 {{ t("about.email") }}
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
-                {{ personalData.email }}
+                {{ t("personal.email") }}
               </p>
             </div>
           </div>
@@ -73,7 +68,7 @@ const { t } = useI18n();
                 {{ t("about.location") }}
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
-                {{ personalData.location }}
+                {{ t("personal.location") }}
               </p>
             </div>
           </div>
@@ -88,7 +83,7 @@ const { t } = useI18n();
                 {{ t("about.education") }}
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
-                {{ personalData.education }}
+                {{ t("personal.education") }}
               </p>
             </div>
           </div>
@@ -103,7 +98,7 @@ const { t } = useI18n();
                 {{ t("about.experience") }}
               </h4>
               <p class="text-secondary-600 dark:text-secondary-400">
-                {{ personalData.experience }}
+                {{ t("personal.experience") }}
               </p>
             </div>
           </div>

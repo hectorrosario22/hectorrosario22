@@ -1,27 +1,24 @@
 import type { PersonalInfo } from "../types";
+import { useI18n } from "vue-i18n";
 
-export const personalData: PersonalInfo = {
-  name: "Héctor Rosario",
-  title: ".NET Backend Developer",
-  email: "hectorjuniorrosario22@gmail.com",
-  location: "Santo Domingo, Dominican Republic",
-  education: "Bachelor/Master in Computer Science",
-  experience: "7+ years in .NET development",
-  interests: [
-    "Cloud Computing",
-    "Microservices",
-    "Software Architecture",
-    "DevOps",
-  ],
-  bio: {
-    short:
-      "Backend developer with 7+ years of experience in .NET and cloud technologies (Azure, AWS), focused on scalable solutions, performance optimization, and process automation.",
-    long: [
-      "Experienced backend developer with over seven years working with .NET and cloud technologies such as Azure and AWS. Passionate about designing scalable solutions and optimizing system performance to enhance efficiency and maintainability. Proven track record collaborating in fast-paced environments, leading projects, and automating processes. Seeking to tackle complex challenges and deliver innovative value-driven solutions.",
-    ],
-  },
-  social: {
-    github: "https://github.com/hectorrosario22",
-    linkedin: "https://linkedin.com/in/hector-rosario",
-  },
+export const usePersonalData = (): PersonalInfo => {
+  const { t } = useI18n();
+  
+  return {
+    name: t("personal.name"),
+    title: t("personal.title"),
+    email: t("personal.email"),
+    location: t("personal.location"),
+    education: t("personal.education"),
+    experience: t("personal.experience"),
+    interests: t("personal.interests") as unknown as string[],
+    bio: {
+      short: t("personal.bio.short"),
+      long: t("personal.bio.long"),
+    },
+    social: {
+      github: "https://github.com/hectorrosario22",
+      linkedin: "https://linkedin.com/in/hector-rosario",
+    },
+  };
 };

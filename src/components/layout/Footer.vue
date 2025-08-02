@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { personalData } from "../../data/personal";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
@@ -8,19 +7,19 @@ const { t } = useI18n();
 // Social links
 const socialLinks = computed(() => [
   {
-    name: "Github",
+    name: t("personal.social.github"),
     icon: ["fab", "github"],
-    url: personalData.social.github,
+    url: "https://github.com/hectorrosario22",
   },
   {
-    name: "LinkedIn",
+    name: t("personal.social.linkedin"),
     icon: ["fab", "linkedin"],
-    url: personalData.social.linkedin,
+    url: "https://linkedin.com/in/hector-rosario",
   },
   {
     name: t("about.email"),
     icon: "envelope",
-    url: `mailto:${personalData.email}`,
+    url: `mailto:${t("personal.email")}`,
   },
 ]);
 </script>
@@ -33,10 +32,10 @@ const socialLinks = computed(() => [
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-6 md:mb-0">
           <h2 class="text-2xl font-bold text-primary-500">
-            {{ personalData.name }}
+            {{ t("personal.name") }}
           </h2>
           <p class="mt-2 text-secondary-600 dark:text-secondary-300">
-            {{ personalData.title }}
+            {{ t("personal.title") }}
           </p>
         </div>
 

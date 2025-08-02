@@ -1,17 +1,36 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import { projectsData } from "../../data/projects";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 
 const selectedCategory = ref("all");
 
+// Create reactive projects data that updates with language changes
+const projectsData = computed(() => ({
+  categories: [
+    { id: "all", name: t("projects.all") },
+    { id: "cli", name: "CLI" },
+  ],
+  projects: [
+    {
+      id: 1,
+      title: t("projects.expenseTracker.title"),
+      description: t("projects.expenseTracker.description"),
+      image: "images/projects/expense-tracker.webp",
+      category: ["cli"],
+      technologies: ["C#", ".NET 9", "Cocona", "JSON", "CSV"],
+      githubUrl: "https://github.com/hectorrosario22/ExpenseTracker",
+      demoUrl: null,
+    },
+  ],
+}));
+
 const filteredProjects = computed(() => {
   if (selectedCategory.value === "all") {
-    return projectsData.projects;
+    return projectsData.value.projects;
   }
-  return projectsData.projects.filter((project) =>
+  return projectsData.value.projects.filter((project) =>
     project.category.includes(selectedCategory.value)
   );
 });
