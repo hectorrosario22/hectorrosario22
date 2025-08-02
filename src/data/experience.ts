@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 
 export const useExperienceData = (): Experience => {
   const { t } = useI18n();
-  
+
   return {
     work: [
       {
@@ -48,7 +48,9 @@ export const useExperienceData = (): Experience => {
         company: t("work.fullStackDeveloper.company"),
         period: t("work.fullStackDeveloper.period"),
         location: t("work.fullStackDeveloper.location"),
-        description: t("work.fullStackDeveloper.description") as unknown as string[],
+        description: t(
+          "work.fullStackDeveloper.description",
+        ) as unknown as string[],
         technologies: [
           "C#",
           ".NET Core",

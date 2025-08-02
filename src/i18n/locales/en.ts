@@ -5,6 +5,8 @@ export default {
     skills: "Skills",
     projects: "Projects",
     experience: "Experience",
+    toggleTheme: "Toggle theme",
+    toggleMenu: "Toggle menu",
   },
   hero: {
     greeting: "Hello, my name is",
@@ -46,15 +48,25 @@ export default {
     liveDemo: "Live Demo",
     viewCode: "View Code",
     all: "All",
+    completion: "Completion",
+    technologies: "Technologies",
+    moreProjects: "More Projects",
+    checkGitHub: "Check out more projects on GitHub",
+    viewGitHub: "View GitHub",
     expenseTracker: {
       title: "Expense Tracker",
-      description: "A command-line application built with .NET 9 and Cocona to manage personal expenses. It supports categorization, CSV export, budget tracking, and local JSON persistence.",
+      description:
+        "A command-line application built with .NET 9 and Cocona to manage personal expenses. It supports categorization, CSV export, budget tracking, and local JSON persistence.",
     },
   },
   experience: {
-    title: "Work Experience",
+    title: "Experience & Education",
     subtitle: "My professional journey and career highlights",
     education: "Education",
+    workExperience: "Work Experience",
+    downloadCV: "Download CV",
+    downloadCVSubtitle: "Get a copy of my resume",
+    download: "Download",
   },
   personal: {
     name: "Hector Rosario",
@@ -70,7 +82,8 @@ export default {
       "DevOps",
     ],
     bio: {
-      short: "Backend developer with 7+ years of experience in .NET and cloud technologies (Azure, AWS), focused on scalable solutions, performance optimization, and process automation.",
+      short:
+        "Backend developer with 7+ years of experience in .NET and cloud technologies (Azure, AWS), focused on scalable solutions, performance optimization, and process automation.",
       long: "Experienced backend developer with over seven years working with .NET and cloud technologies such as Azure and AWS. Passionate about designing scalable solutions and optimizing system performance to enhance efficiency and maintainability. Proven track record collaborating in fast-paced environments, leading projects, and automating processes. Seeking to tackle complex challenges and deliver innovative value-driven solutions.",
     },
     social: {
@@ -124,15 +137,35 @@ export default {
     },
   },
   education: {
+    technical: {
+      title: "Technical Degree in Application Design and Development",
+      institution: "INFOTEP",
+      period: "2016 - 2017",
+      description:
+        "This program gave me a strong foundation in software development principles and programming practices, and it set the stage for my hands-on experience in the industry.",
+    },
     degree: "Application Design and Development Technician",
     institution: "INFOTEP",
     period: "2016 - 2017",
-    description: "This program gave me a strong foundation in software development principles and programming practices, and it set the stage for my hands-on experience in the industry.",
+    description:
+      "This program gave me a strong foundation in software development principles and programming practices, and it set the stage for my hands-on experience in the industry.",
     skills: {
       0: "Problem Solving",
-      1: "Skill Development", 
+      1: "Skill Development",
       2: "Web Development",
     },
+  },
+  footer: {
+    tagline: "Backend Developer",
+    description:
+      "Passionate about creating scalable and efficient solutions with modern technologies.",
+    quickLinks: "Quick Links",
+    contact: "Contact",
+    email: "Email",
+    location: "Location",
+    backToTop: "Back to Top",
+    rightsReserved: "All rights reserved.",
+    builtWith: "Built with",
   },
   ui: {
     ariaLabels: {
@@ -142,5 +175,6 @@ export default {
       switchToLight: "Switch to light mode",
       switchToDark: "Switch to dark mode",
     },
+    scrollToTop: "Scroll to top",
   },
 };

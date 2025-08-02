@@ -2,7 +2,7 @@ import { useI18n } from "vue-i18n";
 
 export const useProjectsData = () => {
   const { t } = useI18n();
-  
+
   return {
     categories: [
       { id: "all", name: t("projects.all") },

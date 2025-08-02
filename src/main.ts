@@ -42,6 +42,10 @@ import {
   faCloud,
   faCodeBranch,
   faCalendarAlt,
+  faDownload,
+  faLightbulb,
+  faArrowUp,
+  faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Smooth scroll
@@ -80,6 +84,10 @@ library.add(
   faCloud,
   faCodeBranch,
   faCalendarAlt,
+  faDownload,
+  faLightbulb,
+  faArrowUp,
+  faExternalLinkAlt,
 );
 
 const app = createApp(App);

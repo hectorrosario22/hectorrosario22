@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 
 export const usePersonalData = (): PersonalInfo => {
   const { t } = useI18n();
-  
+
   return {
     name: t("personal.name"),
     title: t("personal.title"),

@@ -1,0 +1,6 @@
+dist/
+node_modules/
+*.min.js
+*.d.ts
+env.d.ts
+vite-env.d.ts 
