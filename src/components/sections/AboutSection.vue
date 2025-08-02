@@ -6,7 +6,7 @@ const { t, locale } = useI18n();
 // Function to download CV based on current language
 const downloadCV = () => {
   const cvFile =
-    locale.value === "es" ? "/resumes/cv-es.pdf" : "/resumes/cv-en.pdf";
+    locale.value === "es" ? "resumes/cv-es.pdf" : "resumes/cv-en.pdf";
   const link = document.createElement("a");
   link.href = cvFile;
   link.download = `CV-Hector-Rosario-${locale.value.toUpperCase()}.pdf`;
