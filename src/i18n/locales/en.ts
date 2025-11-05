@@ -71,7 +71,7 @@ export default {
   personal: {
     name: "Hector Rosario",
     title: ".NET Backend Developer",
-    email: "hectorjuniorrosario22{'@'}gmail.com",
+    email: "hectorjuniorrosario22@gmail.com",
     location: "Santo Domingo, Dominican Republic",
     education: "Technical Degree in Application Design and Development",
     experience: "7+ years in .NET development",
