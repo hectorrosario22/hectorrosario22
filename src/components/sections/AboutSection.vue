@@ -44,7 +44,8 @@ const downloadCV = () => {
             <div class="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="/images/about/me.webp"
-                alt="Profile Image"
+                alt="Portrait of Hector Rosario, .NET Backend Developer"
+                loading="lazy"
                 class="w-full h-auto object-cover transition-transform duration-700 hover:scale-105"
               />
               <!-- Overlay gradient -->

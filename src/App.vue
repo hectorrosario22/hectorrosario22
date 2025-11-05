@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from "vue";
-import { useI18n } from "vue-i18n";
+import { useTheme } from "./composables/useTheme";
+import { useLocale } from "./composables/useLocale";
 import Navbar from "./components/layout/Navbar.vue";
 import Footer from "./components/layout/Footer.vue";
 import ScrollToTop from "./components/layout/ScrollToTop.vue";
@@ -10,58 +10,8 @@ import ExperienceSection from "./components/sections/ExperienceSection.vue";
 import SkillsSection from "./components/sections/SkillsSection.vue";
 import ProjectsSection from "./components/sections/ProjectsSection.vue";
 
-const { locale } = useI18n();
-
-const isDarkMode = ref(false);
-
-// Theme management
-const toggleTheme = () => {
-  isDarkMode.value = !isDarkMode.value;
-  localStorage.setItem("theme", isDarkMode.value ? "dark" : "light");
-  updateTheme();
-};
-
-const updateTheme = () => {
-  if (isDarkMode.value) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-};
-
-// Initialize theme and locale
-onMounted(() => {
-  // Theme initialization
-  const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  if (savedTheme) {
-    isDarkMode.value = savedTheme === "dark";
-  } else {
-    isDarkMode.value = prefersDark;
-  }
-
-  updateTheme();
-
-  // Locale initialization
-  const savedLocale = localStorage.getItem("locale");
-  if (savedLocale) {
-    locale.value = savedLocale;
-  }
-
-  // Watch for system theme changes
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-      if (!localStorage.getItem("theme")) {
-        isDarkMode.value = e.matches;
-        updateTheme();
-      }
-    });
-});
-
-// Watch for theme changes
-watch(isDarkMode, updateTheme);
+const { isDarkMode, toggleTheme } = useTheme();
+useLocale();
 </script>
 
 <template>
@@ -69,11 +19,18 @@ watch(isDarkMode, updateTheme);
     class="min-h-screen bg-secondary-50 dark:bg-secondary-900 transition-all duration-300"
     :class="{ dark: isDarkMode }"
   >
+    <!-- Skip to content link for accessibility -->
+    <a
+      href="#main-content"
+      class="skip-to-content"
+      >Skip to main content</a
+    >
+
     <!-- Navigation -->
     <Navbar @toggle-theme="toggleTheme" />
 
     <!-- Main Content -->
-    <main class="relative">
+    <main id="main-content" class="relative" role="main">
       <!-- Hero Section -->
       <HeroSection />
 
@@ -176,6 +133,24 @@ a:focus {
 .dark .glass {
   background: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-600);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+  z-index: 100;
+}
+
+.skip-to-content:focus {
+  top: 0;
 }
 
 /* Animation utilities */

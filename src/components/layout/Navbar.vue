@@ -23,6 +23,7 @@ const closeMenu = () => {
 const toggleLanguage = () => {
   locale.value = locale.value === "en" ? "es" : "en";
   localStorage.setItem("locale", locale.value);
+  document.documentElement.lang = locale.value;
 };
 
 const handleScroll = () => {
