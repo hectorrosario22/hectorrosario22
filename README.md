@@ -1,21 +1,52 @@
-# Welcome to my GitHub Profile! 👋
+# 👋 Hi, I'm Héctor Rosario
 
-Hello there! I'm Héctor Rosario, a passionate .NET backend developer driven by the desire to build robust and efficient solutions. My goal is to create high-quality applications that tackle real-world problems and take the user experience to new heights.
+Senior Backend Engineer with 8+ years of experience building scalable and reliable systems using **.NET, C#, and Azure**.
 
-## 🚀 Skills and Technologies
+I specialize in **backend architecture, distributed systems, and event-driven solutions**, with a strong focus on performance, maintainability, and real-world impact.
 
-- I'm proficient in programming languages like C#, .NET, ASP.NET, SQL, and JavaScript.
-- I'm familiar with frameworks and libraries such as .NET Core, Entity Framework, ASP.NET Core, Web API, and LINQ.
-- I have experience working with databases like SQL Server and MySQL.
-- I'm skilled in version control with Git.
-- I'm comfortable working with agile methodologies like Scrum and Kanban.
+---
 
-## 💼 Professional Experience
+## 🧠 What I Focus On
 
-Currently, I work as a software developer, where I actively contribute to the development of scalable and high-performance web applications. My primary focus revolves around implementing business logic, designing efficient databases, and building robust web apps that streamline and simplify user workflows.
+- Designing and building scalable backend services  
+- Event-driven architectures and messaging systems  
+- API design and system integrations  
+- Performance optimization and system reliability  
+- Cloud-native development with Azure  
 
-## 📫 Get in Touch!
+---
 
-If you're interested in collaborating on exciting projects or simply want to discuss .NET backend development, feel free to reach out! You can find me on [LinkedIn](https://www.linkedin.com/in/hector-rosario).
+## 🛠️ Tech Stack
 
-Thank you for taking the time to visit my GitHub profile! I hope you find my work and contributions intriguing. I'm eager to continue learning and creating innovative solutions.
+### Backend
+- .NET
+- C#
+- ASP.NET Core
+- Web APIs
+- Microservices
+
+### Cloud & Architecture
+- Microsoft Azure
+- Event-Driven Systems
+- Azure Service Bus
+- Distributed Systems
+
+### Data
+- SQL Server
+- Database Design
+- Performance Tuning
+
+---
+
+## 💼 Professional Background
+
+I’ve worked on high-impact platforms used by thousands of users, building backend services, integrations, and scalable solutions across complex environments.
+
+My experience includes system modernization, API ecosystems, and designing architectures that support growth and reliability.
+
+---
+
+## 🤝 Let’s Connect
+
+- 💼 LinkedIn: [LinkedIn](https://www.linkedin.com/in/hector-rosario)  
+- 🌐 Portfolio: (coming soon)
