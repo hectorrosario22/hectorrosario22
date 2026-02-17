@@ -48,5 +48,5 @@ My experience includes system modernization, API ecosystems, and designing archi
 
 ## 🤝 Let’s Connect
 
-- 💼 LinkedIn: [LinkedIn](https://www.linkedin.com/in/hector-rosario)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/hector-rosario)  
 - 🌐 Portfolio: (coming soon)
