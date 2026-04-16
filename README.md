@@ -1,6 +1,6 @@
 # Hey, I'm Héctor 👋
 
-I'm a backend engineer based in the Dominican Republic, mostly working with **.NET, C#, and Azure**. I've spent the last 8 years building internal platforms and backend systems, the kind that get used by thousands of people every day and need to actually hold up.
+I'm a backend engineer based in the Dominican Republic, mostly working with **.NET, C#, and Azure**. I've spent the last 9 years building internal platforms and backend systems, the kind that get used by thousands of people every day and need to actually hold up.
 
 Most of my work lives on the backend: designing APIs, building event-driven systems, wiring up integrations, and occasionally going down a rabbit hole optimizing SQL queries that were taking 15 seconds and had no business doing that.
 
