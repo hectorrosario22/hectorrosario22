@@ -44,5 +44,4 @@ I care a lot about keeping systems maintainable — not just making them work. I
 
 ## Let's connect
 
-- 💼 [linkedin.com/in/hector-rosario](https://www.linkedin.com/in/hector-rosario)
-- 📬 [mailto:me@hrosario.dev](me@hrosario.dev)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=about.me&logoColor=white)](https://portfolio.hrosario.dev)   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hector-rosario)   [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:me@hrosario.dev)
