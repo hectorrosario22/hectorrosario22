@@ -1,47 +1,117 @@
 # Hey, I'm Héctor 👋
 
-I'm a backend engineer based in the Dominican Republic, mostly working with **.NET, C#, and Azure**. I've spent the last 9 years building internal platforms and backend systems, the kind that get used by thousands of people every day and need to actually hold up.
+I'm a **Senior Backend Engineer** from the Dominican Republic with **9+ years of experience** building scalable systems with **.NET, C#, SQL Server, and Azure**.
 
-Most of my work lives on the backend: designing APIs, building event-driven systems, wiring up integrations, and occasionally going down a rabbit hole optimizing SQL queries that were taking 15 seconds and had no business doing that.
+My work is mostly focused on backend engineering: designing APIs, modernizing legacy systems, building integrations, improving performance, and creating services that are reliable enough to run in production for thousands of users.
 
----
-
-## What I've been building lately
-
-At **DGA** (Dominican Republic's customs authority), I've been leading development on **VUCE RD**, a platform that manages import/export permits for multiple regulatory agencies. What started as a migration turned into a full rebuild. It's used by thousands of contributors daily and handles workflows across government entities.
-
-I also built a **configurable rules engine** that lets business teams define validation logic through a UI, no deployments needed for rule changes. And I integrated the national electronic invoicing system (DGII) into the main customs platform.
-
-As a freelancer, I designed and built a **multi-channel notification system** for an insurance company, real-time push via SignalR, async processing with Azure Service Bus, and integrations with WhatsApp (Meta API), SendGrid, and SMS via C3ntro.
+I enjoy working on systems where backend decisions matter — architecture, data flow, async processing, integrations, maintainability, and performance.
 
 ---
 
-## Tech I work with
+## What I do best
 
-![C#](https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat&logo=dotnet&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoftazure&logoColor=white)
-![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white)
-![Azure Service Bus](https://img.shields.io/badge/Service_Bus-0078D4?style=flat&logo=microsoftazure&logoColor=white)
-![SignalR](https://img.shields.io/badge/SignalR-512BD4?style=flat&logo=dotnet&logoColor=white)
-![Vue](https://img.shields.io/badge/Vue-4FC08D?style=flat&logo=vuedotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Azure DevOps](https://img.shields.io/badge/Azure_DevOps-0078D4?style=flat&logo=azuredevops&logoColor=white)
-
-**Backend:** ASP.NET Core · Web APIs · Microservices · Azure Functions · Azure Service Bus · SignalR  
-**Frontend:** Vue · React · Microfrontends (single-spa, Module Federation)  
-**Data:** SQL Server · Query optimization · Database design  
-**Integrations:** DGII · Meta/WhatsApp API · SendGrid · SMTP · Payment gateways  
+- Build and maintain backend services with **.NET, C#, and ASP.NET Core**
+- Design APIs for complex business workflows
+- Work with **SQL Server**, database design, and query optimization
+- Build event-driven systems using **Azure Service Bus**, workers, and background processing
+- Integrate third-party and government platforms
+- Improve legacy systems and make them easier to maintain
+- Collaborate across teams to turn business requirements into reliable technical solutions
 
 ---
 
-## A bit more about how I work
+## Recent work
 
-I care a lot about keeping systems maintainable — not just making them work. I like finding the simplest solution that solves the actual problem, and I'm comfortable working across the stack when needed, even if backend is where I feel most at home.
+### VUCE RD — Import/export permit platform
+
+At **DGA**, the Dominican Republic's customs authority, I’ve worked on **VUCE RD**, a platform used to manage import and export permits across multiple regulatory agencies.
+
+The platform supports workflows for contributors, internal users, and government entities. My work has included backend development, API design, integrations, and helping evolve the system from a legacy module into a more independent and scalable platform.
+
+---
+
+### Configurable rules engine
+
+I helped build a configurable rules system that allows business teams to define validation logic without requiring code changes or new deployments.
+
+The system supports dynamic object configuration, rule definitions based on data types, and searchable fields for business-specific entities such as products, tariffs, brands, and other domain data.
+
+---
+
+### DGII electronic invoicing integration
+
+I was the main developer behind the integration between the core customs platform and the Dominican Republic’s national electronic invoicing system.
+
+This involved connecting internal systems with external government services and ensuring reliable data exchange across critical business processes.
+
+---
+
+### Multi-channel notification system
+
+As a freelance developer, I worked on a modernization project in the insurance sector, focused on building backend components for a multi-channel notification platform.
+
+The system allowed other modules to send notifications through multiple channels:
+
+- Real-time browser push notifications with **SignalR**
+- Email notifications through **SMTP** and **SendGrid**
+- SMS notifications through **C3ntro**
+- WhatsApp notifications using the official **Meta API**
+- Asynchronous processing with **Azure Service Bus** and background workers
+
+I also contributed to a React microfrontend for displaying notifications, unread counters, and read status updates.
+
+---
+
+## Tech stack
+
+### Backend
+
+**C#** · **.NET** · **ASP.NET Core** · **Web APIs** · **Microservices** · **Azure Functions** · **SignalR**
+
+### Cloud and messaging
+
+**Microsoft Azure** · **Azure Service Bus** · **Azure DevOps** · **CI/CD** · Background Workers
+
+### Data
+
+**SQL Server** · Query Optimization · Database Design · Stored Procedures
+
+### Frontend experience
+
+**Vue** · **React** · **TypeScript** · Microfrontends · single-spa · Module Federation
+
+### Integrations
+
+DGII Electronic Invoicing · Meta WhatsApp API · SendGrid · SMTP · SMS Providers · Payment Gateways
+
+---
+
+## How I work
+
+I care about building systems that are not only functional, but maintainable.
+
+I like simple solutions that solve the actual problem, clean APIs, clear data flows, and backend services that other developers can understand and extend without fear.
+
+I’m comfortable working across the stack when needed, but backend engineering is where I bring the most value.
+
+---
+
+## Currently focused on
+
+I'm interested in remote backend or .NET roles where I can work on:
+
+- Scalable APIs
+- Distributed systems
+- Cloud integrations
+- Event-driven architectures
+- Performance improvements
+- Backend modernization
+- Long-term maintainability
 
 ---
 
 ## Let's connect
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=about.me&logoColor=white)](https://portfolio.hrosario.dev)   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hector-rosario)   [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:me@hrosario.dev)
+[Portfolio](https://portfolio.hrosario.dev)  
+[LinkedIn](https://www.linkedin.com/in/hector-rosario)  
+[Email](mailto:me@hrosario.dev)
